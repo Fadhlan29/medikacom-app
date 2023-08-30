@@ -30,6 +30,11 @@ export const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     expertise: {
-        marginVertical: 20
+        marginVertical: 10,
+    },
+    titleExpertise: {
+        fontSize: 20,
+        fontFamily: 'Poppins-Bold',
+        marginTop: 15
     }
 })
