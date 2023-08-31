@@ -15,7 +15,8 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         paddingVertical: 30,
         paddingHorizontal: 20,
-        backgroundColor: Colors.lightGrey
+        backgroundColor: Colors.lightGrey,
+        marginBottom: 100
     },
     header: {
         alignItems: 'center',
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginVertical: 15
+        marginVertical: 15,
     },
     cardLeft: {
         flexDirection: 'row',
