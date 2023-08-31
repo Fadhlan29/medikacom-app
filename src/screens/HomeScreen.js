@@ -16,6 +16,7 @@ import {FlatList} from 'react-native';
 import {dataExpertise} from '../constant/DataExpertise';
 import Colors from '../constant/Colors';
 import {SidebarHome, ExpertiseCard, Banner} from '../components';
+import smk from '../assets/images/smk.png';
 
 const HomeScreen = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,7 +27,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <StatusBar
           style="auto"
           translucent={false}
@@ -40,32 +41,62 @@ const HomeScreen = () => {
             {showSidebar ? (
               <IconClose
                 name="close"
-                size={30}
+                size={35}
                 color={Colors.darkGrey}
                 style={styles.iconHeaderHome}
               />
             ) : (
               <IconToogle
                 name="align-left"
-                size={30}
+                size={35}
                 color={Colors.darkGrey}
                 style={styles.iconHeaderHome}
               />
             )}
           </TouchableOpacity>
+          {/* <Text>MYSCHOOL</Text> */}
           <Image source={logo} style={styles.logoHeaderHome} />
         </View>
 
         {/* sidebar */}
         <SidebarHome showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
 
-        {/* Banner */}
-        {/* <Banner /> */}
+        {/* title */}
+        <View style={styles.titleWrapper}>
+          <Text style={styles.titleFirst}>learn and grow with</Text>
+          <Text style={styles.titleSecond}>SMK MedikaCom</Text>
+        </View>
 
-        <Text>SMK MedikaCom</Text>
+        {/*  */}
+        <View style={styles.cardsWrapper}>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/images/profile.png')}
+              style={styles.cards}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/images/data.png')}
+              style={styles.cards}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/images/informasi.png')}
+              style={styles.cards}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require('../assets/images/gallery.png')}
+              style={styles.cards}
+            />
+          </TouchableOpacity>
+        </View>
 
         {/* Expertise Program */}
-        <Text style={styles.titleExpertise}>Kompetensi Keahlian</Text>
+        <Text style={styles.titleExpertise}>Daftar Jurusan</Text>
         <ScrollView style={styles.expertise}>
           <FlatList
             showsHorizontalScrollIndicator={false}

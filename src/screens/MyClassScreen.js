@@ -27,7 +27,7 @@ const MyClassScreen = () => {
               renderItem={({item}) => (
                 <View style={styles.lessonCard}>
                   <View style={styles.cardLeft}>
-                    <Avatar.Image size={50} source={Image} style={styles.avatar} />
+                    <Avatar.Image size={60} source={Image} style={styles.avatar} />
                     <Text style={styles.cardText}>{item.lesson}</Text>
                   </View>
                   <Icon size={25} name="chevron-right" style={styles.cardIcon} />

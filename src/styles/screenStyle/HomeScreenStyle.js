@@ -15,26 +15,54 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingVertical: 10,
-        marginBottom: 5
+        paddingBottom: 15,
     },
     iconHeaderHome: {
         marginLeft: 10,
         // backgroundColor: Colors.secondary,
         padding: 3,
         borderRadius: 10,
+        width: 75,
     },
     logoHeaderHome: {
         width: 80,
         height: 50,
-        resizeMode: 'cover',
+        borderWidth: 2
+    },
+    titleWrapper: {
+        paddingLeft: 10
+    },
+    titleFirst: {
+        fontSize: 25,
+        fontFamily: 'Poppins-Regular',
+        color: Colors.darkGrey,
+    },
+    titleSecond: {
+        marginTop: -10,
+        fontSize: 30,
+        fontFamily: 'Poppins-SemiBold',
+        color: Colors.darkGrey,
+    },
+    cardsWrapper: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: '100%',
+        justifyContent: 'space-evenly',
+        marginTop: 10
+    },
+    cards: {
+        width: 150,
+        height: 110,
+        marginBottom: 13,
+        marginHorizontal: 10,
+        borderRadius: 15
     },
     expertise: {
         marginVertical: 10,
     },
     titleExpertise: {
-        fontSize: 20,
-        fontFamily: 'Poppins-Bold',
-        marginTop: 15
+        fontSize: 23,
+        fontFamily: 'Poppins-SemiBold',
+        marginTop: 10,
     }
 })
