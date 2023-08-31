@@ -1,7 +1,11 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
-    SplashScreen
+    SplashScreen,
+    ProfileScreen,
+    DataScreen,
+    InformasiScreen,
+    GalleryScreen
 } from '../screens/index'
 import TabNavigation from './TabNavigation';
 
@@ -16,6 +20,10 @@ const Router = () => {
      }}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="MainApp" component={TabNavigation} />
+        <Stack.Screen name="profile" component={ProfileScreen} />
+        <Stack.Screen name="data" component={DataScreen} />
+        <Stack.Screen name="informasi" component={InformasiScreen} />
+        <Stack.Screen name="gallery" component={GalleryScreen} />
     </Stack.Navigator>
   )
 }

@@ -16,14 +16,19 @@ import {FlatList} from 'react-native';
 import {dataExpertise} from '../constant/DataExpertise';
 import Colors from '../constant/Colors';
 import {SidebarHome, ExpertiseCard, Banner} from '../components';
-import smk from '../assets/images/smk.png';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const navigation = useNavigation()
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
+
+  const handleNavigation = (routeName) => {
+    navigation.navigate(routeName)
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -69,25 +74,25 @@ const HomeScreen = () => {
 
         {/*  */}
         <View style={styles.cardsWrapper}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleNavigation('profile')}>
             <Image
               source={require('../assets/images/profile.png')}
               style={styles.cards}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleNavigation('data')}>
             <Image
               source={require('../assets/images/data.png')}
               style={styles.cards}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleNavigation('informasi')}>
             <Image
               source={require('../assets/images/informasi.png')}
               style={styles.cards}
             />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => handleNavigation('gallery')}>
             <Image
               source={require('../assets/images/gallery.png')}
               style={styles.cards}
