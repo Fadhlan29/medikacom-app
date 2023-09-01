@@ -13,26 +13,46 @@ export const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingVertical: 30,
-        paddingHorizontal: 20,
+        // paddingHorizontal: 20,
         backgroundColor: Colors.lightGrey,
         marginBottom: 100
     },
     header: {
         alignItems: 'center',
-        marginBottom: 10
+        marginBottom: 10,
+        backgroundColor: Colors.primary,
+        width: '100%',
+        paddingVertical: 20,
+        paddingHorizontal: 50,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30
+    },
+    titleHeader: {
+        fontFamily: 'Poppins-Bold',
+        fontSize: 22,
+        color: Colors.white
+    },
+    inputWrapper: {
+        flexDirection: 'row',
+        backgroundColor: Colors.white,
+        alignItems: 'center',
+        borderRadius: 25,
+        marginTop: 10 
+    },
+    inputIcon: {
+        padding: 12
+    },
+    inputText: {
+        width: '100%',
+        fontSize: 17,
+        paddingVertical: 8,
+        paddingLeft: 0
     },
     title: {
+        fontSize: 20,
         fontFamily: 'Poppins-SemiBold',
-        fontSize: 20,
-        color: Colors.darkGrey
-    },
-    class: {
-        fontSize: 20,
-        fontFamily: 'Poppins-BoldItalic',
-        color: Colors.grey,
-        marginTop: 15,
-        borderTopWidth: 1
+        color: Colors.darkGrey,
+        marginTop: 10,
     },
     classSecond: {
         fontSize: 20,
@@ -40,13 +60,21 @@ export const styles = StyleSheet.create({
         color: Colors.darkGrey
     },
     content: {
-        width: '100%'
+        width: '100%',
+        paddingHorizontal: 20,
+        marginTop: 15,
+        marginBottom: 110,
+    },
+    titleLesson: {
+        fontSize: 15,
+        color: Colors.darkGrey,
+        fontFamily: 'Poppins-Regular'
     },
     lessonCard: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginVertical: 15,
+        marginVertical: 12,
     },
     cardLeft: {
         flexDirection: 'row',
@@ -56,7 +84,8 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         marginLeft: 10,
         fontFamily: 'Poppins-SemiBold',
-        width: 200
+        width: 200,
+        color: Colors.darkGrey
     },
     cardIcon: {
         backgroundColor: '#dedede',

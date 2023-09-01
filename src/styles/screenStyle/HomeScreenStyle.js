@@ -57,12 +57,14 @@ export const styles = StyleSheet.create({
         marginHorizontal: 10,
         borderRadius: 15
     },
-    expertise: {
-        marginVertical: 10,
+    programStudyWrapper: {
+        marginVertical: 5,
     },
-    titleExpertise: {
-        fontSize: 23,
+    titleProgramStudy: {
+        fontSize: 18,
         fontFamily: 'Poppins-SemiBold',
         marginTop: 10,
+        color: Colors.darkGrey,
+        paddingLeft: 10
     }
 })

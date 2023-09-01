@@ -101,8 +101,8 @@ const HomeScreen = () => {
         </View>
 
         {/* Expertise Program */}
-        <Text style={styles.titleExpertise}>Daftar Jurusan</Text>
-        <ScrollView style={styles.expertise}>
+        <Text style={styles.titleProgramStudy}>program study:</Text>
+        <ScrollView style={styles.programStudyWrapper}>
           <FlatList
             showsHorizontalScrollIndicator={false}
             horizontal
