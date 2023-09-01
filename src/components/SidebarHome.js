@@ -1,15 +1,23 @@
-import {View, Text} from 'react-native';
+import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {styles} from '../styles/componentStyle/SidebarHomeStyle'
-import { Avatar } from 'react-native-paper';
-import user from '../assets/images/dummy_user.jpg'
+import {styles} from '../styles/componentStyle/SidebarHomeStyle';
+import {Avatar} from 'react-native-paper';
+import user from '../assets/images/dummy_user.png';
+import IconClose from 'react-native-vector-icons/Ionicons';
 
-const SidebarHome = ({ showSidebar }) => {
+const SidebarHome = ({toggleSidebar}) => {
   return (
-    <View style={showSidebar ? styles.sidebar : {display: 'none'}}>
-      {/* <Text style={styles.textSidebar}>sidebar</Text> */}
-      <Avatar.Image size={70} source={user} style={styles.avatar}/>
-    </View>
+    <SafeAreaView style={styles.container}>
+        <TouchableOpacity onPress={toggleSidebar}>
+          <IconClose name='close' size={35} color='black' style={styles.icon}/>
+        </TouchableOpacity>
+      <View style={styles.content}>
+        <Avatar.Image size={70} source={user} style={styles.logoUser}/>
+        <TouchableOpacity style={styles.btnLogin}>
+          <Text style={styles.textBtnLogin}>Login</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
 

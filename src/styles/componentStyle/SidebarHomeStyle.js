@@ -1,38 +1,37 @@
 import { StyleSheet } from "react-native";
+import Colors from "../../constant/Colors"
 
 export const styles = StyleSheet.create({
-    sidebar: {
+    container: {
+        backgroundColor: Colors.white,
+        flex: 1,
         width: '70%',
-        // flex: 1,
-        height: 500,
-        backgroundColor: 'rgba( 0, 0, 0, 0.8)',
-        position: 'absolute',
-        zIndex: 99999,
-        top: 70,
-        left: 0,
+    },
+    content: {
+        backgroundColor: Colors.white,
+        flex: 1,
+        paddingHorizontal: 20,
+        paddingBottom: 20,
+        alignItems: 'center',
+    },
+    icon: {
+        alignSelf: 'flex-end',
+        padding: 15
+    },
+    logoUser: {
+        backgroundColor: Colors.lightGrey
+    },
+    btnLogin: {
+        borderWidth: 2,
+        paddingVertical: 4,
+        paddingHorizontal: 15,
+        borderColor: Colors.darkGrey,
         borderRadius: 10,
-        justifyContent: 'flex-start',
-        alignItems: 'center' 
+        marginTop: 20
     },
-    // sidebarClose: {
-    //     width: '70%',
-    //     // flex: 1,
-    //     height: 500,
-    //     backgroundColor: 'rgba( 0, 0, 0, 0.8)',
-    //     position: 'absolute',
-    //     zIndex: 999,
-    //     top: 70,
-    //     left: -250,
-    //     borderRadius: 10,
-    //     justifyContent: 'flex-start',
-    //     alignItems: 'center',
-    // },
-    textSidebar: {
-        color: '#fff',
+    textBtnLogin: {
+        fontSize: 15,
         fontFamily: 'Poppins-SemiBold',
-        marginTop: 10
-    },
-    avatar: {
-        marginTop: 30
+        color: Colors.darkGrey
     }
 })

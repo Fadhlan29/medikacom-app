@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         // paddingVertical: 15,
         paddingHorizontal: 10,
         paddingTop: 10,
-        height: 1000
+        // height: 1000
     },
     headerHome: {
         width: '100%',
@@ -28,6 +28,9 @@ export const styles = StyleSheet.create({
         width: 80,
         height: 50,
         borderWidth: 2
+    },
+    sidebar: {
+        margin: 0
     },
     titleWrapper: {
         paddingLeft: 10

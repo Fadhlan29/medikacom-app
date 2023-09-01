@@ -54,16 +54,11 @@ export const styles = StyleSheet.create({
         color: Colors.darkGrey,
         marginTop: 10,
     },
-    classSecond: {
-        fontSize: 20,
-        fontFamily: 'Poppins-Bold',
-        color: Colors.darkGrey
-    },
     content: {
         width: '100%',
         paddingHorizontal: 20,
         marginTop: 15,
-        marginBottom: 110,
+        paddingBottom: 110,
     },
     titleLesson: {
         fontSize: 15,
@@ -75,6 +70,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginVertical: 12,
+    },
+    avatar: {
+        backgroundColor: Colors.lightGrey
     },
     cardLeft: {
         flexDirection: 'row',

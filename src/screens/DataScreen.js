@@ -1,5 +1,12 @@
-import {View, Text, SafeAreaView, ScrollView} from 'react-native';
-import React from 'react';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Modal,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState} from 'react';
 import {Appbar} from 'react-native-paper';
 import Colors from '../constant/Colors';
 import {styles} from '../styles/screenStyle/DataStyle.js';
@@ -17,10 +24,12 @@ const DataScreen = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View>
+          {/* header */}
           <Appbar.Header style={{backgroundColor: Colors.lightGrey}}>
             <Appbar.BackAction onPress={handleToBack} />
             <Appbar.Content title="data" />
           </Appbar.Header>
+          {/* header end */}
         </View>
       </ScrollView>
     </SafeAreaView>

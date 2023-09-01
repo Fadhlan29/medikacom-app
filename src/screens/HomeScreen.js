@@ -11,24 +11,24 @@ import React, {useState} from 'react';
 import {styles} from '../styles/screenStyle/HomeScreenStyle';
 import logo from '../assets/images/logo.png';
 import IconToogle from 'react-native-vector-icons/Feather';
-import IconClose from 'react-native-vector-icons/Ionicons';
 import {FlatList} from 'react-native';
 import {dataExpertise} from '../constant/DataExpertise';
 import Colors from '../constant/Colors';
 import {SidebarHome, ExpertiseCard, Banner} from '../components';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import Modal from 'react-native-modal';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const [showSidebar, setShowSidebar] = useState(false);
-  const navigation = useNavigation()
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
 
-  const handleNavigation = (routeName) => {
-    navigation.navigate(routeName)
-  }
+  const handleNavigation = routeName => {
+    navigation.navigate(routeName);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -42,29 +42,26 @@ const HomeScreen = () => {
 
         {/* header */}
         <View style={styles.headerHome}>
-          <TouchableOpacity onPress={() => setShowSidebar(!showSidebar)}>
-            {showSidebar ? (
-              <IconClose
-                name="close"
-                size={35}
-                color={Colors.darkGrey}
-                style={styles.iconHeaderHome}
-              />
-            ) : (
-              <IconToogle
-                name="align-left"
-                size={35}
-                color={Colors.darkGrey}
-                style={styles.iconHeaderHome}
-              />
-            )}
+          <TouchableOpacity onPress={toggleSidebar}>
+            <IconToogle
+              name="align-left"
+              size={35}
+              color={Colors.darkGrey}
+              style={styles.iconHeaderHome}
+            />
           </TouchableOpacity>
           {/* <Text>MYSCHOOL</Text> */}
           <Image source={logo} style={styles.logoHeaderHome} />
         </View>
 
         {/* sidebar */}
-        <SidebarHome showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+        <Modal
+          isVisible={showSidebar}
+          animationIn="slideInLeft"
+          animationOut="slideOutLeft"
+          style={styles.sidebar}>
+          <SidebarHome toggleSidebar={toggleSidebar} />
+        </Modal>
 
         {/* title */}
         <View style={styles.titleWrapper}>
