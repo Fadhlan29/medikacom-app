@@ -13,8 +13,15 @@ import {Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather.js';
 import Image from '../assets/images/jurusan/rpl.png';
 import Colors from '../constant/Colors.js';
+import { useNavigation } from '@react-navigation/native';
 
 const MyClassScreen = () => {
+  const navigation = useNavigation()
+
+  const handleGo = (lesson) => {
+    navigation.navigate('mapel', { lesson })
+  }
+
   return (
     //<ScrollView>
     <SafeAreaView style={styles.safeAreaView}>
@@ -57,7 +64,7 @@ const MyClassScreen = () => {
                   />
                   <Text style={styles.cardText}>{item.lesson}</Text>
                 </View>
-                <Icon size={25} name="chevron-right" style={styles.cardIcon} />
+                <Icon size={25} name="chevron-right" style={styles.cardIcon} onPress={() => handleGo(item.lesson)}/>
               </View>
             )}
             keyExtractor={item => item.id.toString()}

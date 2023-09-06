@@ -5,6 +5,8 @@ import ProfileScreen from './ProfileScreen';
 import DataScreen from './DataScreen';
 import InformasiScreen from './InformasiScreen';
 import GalleryScreen from './GalleryScreen';
+import LoginScreens from './LoginScreens';
+import MapelScreen from './MapelScreen';
 
 export {
   HomeScreen,
@@ -14,4 +16,6 @@ export {
   DataScreen,
   InformasiScreen,
   GalleryScreen,
+  LoginScreens,
+  MapelScreen
 };
