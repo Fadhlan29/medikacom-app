@@ -61,5 +61,11 @@ export const styles = StyleSheet.create({
         justifyContent:'center', 
         alignItems:'center',
         padding:5
+    },
+    imageMedsos: {
+        borderColor:'#808080',                    
+        paddingHorizontal:10,
+        paddingVertical:10,
+        borderRadius:10
     }
 })

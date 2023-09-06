@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView, ScrollView, Image} from 'react-native';
+import {View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Appbar} from 'react-native-paper';
 import Colors from '../constant/Colors';
@@ -6,7 +6,6 @@ import {styles} from '../styles/screenStyle/ProfileStyle';
 ('../styles/screenStyle/ProfileStyle.js');
 import {useNavigation} from '@react-navigation/native';
 import {useState} from 'react';
-import { Link } from 'native-base';
 
 const ProfileScreen = () => {
   const navigation = useNavigation();
@@ -63,6 +62,22 @@ const ProfileScreen = () => {
           ))}
         </View>
       
+        <View>
+          <Text style={styles.title}>Follow us on:</Text>
+        </View>
+
+        <View style={{flexDirection:'row', justifyContent:'space-around', padding:5}}>
+          <TouchableOpacity style={styles.imageMedsos}>
+              <Image style={{height:35, width:35}} source={require('../assets/images/medos/facebook.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.imageMedsos}>
+              <Image style={{height:35, width:35}} source={require('../assets/images/medos/instagram.jpg')}/>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.imageMedsos}>
+              <Image style={{height:35, width:35}} source={require('../assets/images/medos/youtube.jpg')}/>
+          </TouchableOpacity>
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );
