@@ -1,10 +1,11 @@
-import {View, Text, SafeAreaView, ScrollView} from 'react-native';
+import {View, Text, SafeAreaView, ScrollView, Image} from 'react-native';
 import React from 'react';
 import {Appbar} from 'react-native-paper';
 import Colors from '../constant/Colors';
 import {styles} from '../styles/screenStyle/InformasiStyle.js';
 ('../styles/screenStyle/ProfileStyle.js');
 import {useNavigation} from '@react-navigation/native';
+import {useState} from 'react';
 
 const InformasiScreen = () => {
   const navigation = useNavigation();
@@ -12,6 +13,19 @@ const InformasiScreen = () => {
   const handleToBack = () => {
     navigation.navigate('home');
   };
+
+  const [kategoriSeleksi, setKategoriSeleksi] = useState([
+    {
+      author: 'Pendaftaran Siswa Baru 2021/2022',
+      text: 'Telah dibuka Pendaftaran Calon Siswa/i Baru TP. 2021/2022 di SMK MedikaCom melalui PSB online (diweb ini http://medikacom.sch.id/ppdb )',
+      image: require('../assets/images/ppdb.png'),
+    },
+    {
+      author: 'PEMBERITAHUAN MEDIKACOM BERWAWASAN LINGKUNGAN (ADIWIYATA)',
+      text: 'Bagi seluruh warga SMK medikacom (Guru, Siswa & kantin sekolah) diwajibkan untuk selalu menjaga kebersihan,kerapihan (Ramah Lingkungan), sehingga kegiatan pembelajaran /aktivitas dapat dinikmati dengan suasana yang nyaman dan kondusif.',
+      image: require('../assets/images/adiwiyata.png'),
+    },
+  ]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -22,6 +36,34 @@ const InformasiScreen = () => {
             <Appbar.Content title="informasi" />
           </Appbar.Header>
         </View>
+
+        <View style={styles.banner} />
+        <View style={styles.roundedBorder} />
+        
+        <View>
+          <Image
+            style={styles.image}
+            source={require('../assets/images/medikacom.png')}
+          />
+          <Text style={styles.title}>SMK MedikaCom</Text>
+          <Text style={styles.titleSecond}>Information:</Text>
+       </View>
+
+       <View style={{marginTop:10}}>
+          {kategoriSeleksi.map((kategoriSeleksi, i) => (
+            <View key={i} style={styles.card}>
+              <Image style={styles.imageCard}
+                source={kategoriSeleksi.image}/>
+              <View style={styles.textCard}>
+                <Text style={{fontWeight: 'bold', fontSize: 15}}>
+                  {kategoriSeleksi.author}
+                </Text>
+                <Text>{kategoriSeleksi.text}</Text>
+              </View>
+            </View>
+          ))}
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );

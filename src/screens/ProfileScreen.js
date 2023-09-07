@@ -35,6 +35,7 @@ const ProfileScreen = () => {
             <Appbar.Content title="profile" />
           </Appbar.Header>
         </View>
+        
         <View style={styles.banner} />
         <View style={styles.roundedBorder} />
         
