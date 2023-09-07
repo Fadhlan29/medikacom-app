@@ -30,12 +30,15 @@ const DataScreen = () => {
             <Appbar.Content title="data" />
           </Appbar.Header>
           {/* header end */}
+<<<<<<< HEAD
 
           {/* <Box>
             <Link href="https://nativebase.io">
               Click here to open documentation.
             </Link>
           </Box> */}
+=======
+>>>>>>> 62720cd432eec4b64b8add514a68b494289a1d60
         </View>
       </ScrollView>
     </SafeAreaView>

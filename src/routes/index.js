@@ -5,7 +5,9 @@ import {
     ProfileScreen,
     DataScreen,
     InformasiScreen,
-    GalleryScreen
+    GalleryScreen,
+    LoginScreens,
+    MapelScreen
 } from '../screens/index'
 import TabNavigation from './TabNavigation';
 
@@ -24,6 +26,8 @@ const Router = () => {
         <Stack.Screen name="data" component={DataScreen} />
         <Stack.Screen name="informasi" component={InformasiScreen} />
         <Stack.Screen name="gallery" component={GalleryScreen} />
+        <Stack.Screen name="login" component={LoginScreens} />
+        <Stack.Screen name="mapel" component={MapelScreen} />
     </Stack.Navigator>
   )
 }
