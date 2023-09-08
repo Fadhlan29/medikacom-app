@@ -58,4 +58,17 @@ export const styles = StyleSheet.create({
         maxWidth:250,
         padding:5
     },
+    information: {
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    textInformation: {
+        flexDirection:'row',
+        alignItems:'center',
+        paddingBottom:15
+    },
+    text: {
+        padding:5,
+        fontSize:15
+    }
 })

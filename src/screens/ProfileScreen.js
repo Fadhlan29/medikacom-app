@@ -36,9 +36,9 @@ const ProfileScreen = () => {
           </Appbar.Header>
         </View>
         
+        {/* banner */}
         <View style={styles.banner} />
-        <View style={styles.roundedBorder} />
-        
+        <View style={styles.roundedBorder} /> 
         <View>
           <Image
             style={styles.image}
@@ -46,8 +46,9 @@ const ProfileScreen = () => {
           />
           <Text style={styles.title}>SMK MedikaCom</Text>
           <Text style={styles.titleSecond}>Jl. Rancabolang Soekarno-Hatta No. 10B, Manjah Lega, Rancasari, Bandung, Jawa Barat</Text>
-       </View>
+        </View>
         
+        {/* Card */}
         <View style={{marginTop:20}}>
           {kategoriSeleksi.map((kategoriSeleksi, i) => (
             <View key={i} style={styles.card}>
@@ -61,12 +62,10 @@ const ProfileScreen = () => {
               </View>
             </View>
           ))}
-        </View>
-      
-        <View>
           <Text style={styles.title}>Follow us on:</Text>
         </View>
-
+      
+        {/* Sosmed */}
         <View style={{flexDirection:'row', justifyContent:'space-around', padding:5}}>
           <TouchableOpacity style={styles.imageMedsos}>
               <Image style={{height:35, width:35}} source={require('../assets/images/medos/facebook.png')}/>

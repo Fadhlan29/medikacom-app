@@ -6,6 +6,7 @@ import {styles} from '../styles/screenStyle/InformasiStyle.js';
 ('../styles/screenStyle/ProfileStyle.js');
 import {useNavigation} from '@react-navigation/native';
 import {useState} from 'react';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const InformasiScreen = () => {
   const navigation = useNavigation();
@@ -37,9 +38,9 @@ const InformasiScreen = () => {
           </Appbar.Header>
         </View>
 
+        {/* banner */}
         <View style={styles.banner} />
         <View style={styles.roundedBorder} />
-        
         <View>
           <Image
             style={styles.image}
@@ -49,7 +50,8 @@ const InformasiScreen = () => {
           <Text style={styles.titleSecond}>Information:</Text>
        </View>
 
-       <View style={{marginTop:10}}>
+        {/* Card */}
+        <View style={{marginTop:10}}>
           {kategoriSeleksi.map((kategoriSeleksi, i) => (
             <View key={i} style={styles.card}>
               <Image style={styles.imageCard}
@@ -62,6 +64,14 @@ const InformasiScreen = () => {
               </View>
             </View>
           ))}
+        </View>
+
+        <View style={styles.information}>
+          <Text style={styles.titleSecond}>For more information:</Text>
+          <View style={styles.textInformation}>
+            <Icon name='web' size={25}/>
+            <Text style={styles.text}>https://medikacom.sch.id</Text>
+          </View>
         </View>
 
       </ScrollView>
