@@ -13,6 +13,14 @@ export const styles = StyleSheet.create({
         borderBottomRightRadius:20,
         borderBottomLeftRadius:20,
     },
+    roundedBorder: {
+        marginTop:-80,
+        width: 155,
+        height: 155,
+        backgroundColor: Colors.lightGrey,
+        alignSelf: 'center',
+        borderRadius:80
+    },
     image: {
         marginTop:-140,
         alignSelf:'center',
@@ -25,14 +33,6 @@ export const styles = StyleSheet.create({
         fontFamily: 'Poppins-SemiBold',
         color: Colors.darkGrey,
         alignSelf:'center',
-    },
-    roundedBorder: {
-        marginTop:-80,
-        width: 155,
-        height: 155,
-        backgroundColor: Colors.lightGrey,
-        alignSelf: 'center',
-        borderRadius:80
     },
     titleSecond: {
         fontSize: 15,
