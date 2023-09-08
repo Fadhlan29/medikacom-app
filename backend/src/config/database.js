@@ -1,10 +1,8 @@
-import mysql from 'mysql2'
+import { Sequelize } from 'sequelize'
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root', 
-    password: '', 
-    database: 'belajar', 
-  });
+const db = new Sequelize("medikacom", "root", "", {
+  host: "localhost",
+  dialect: "mysql"
+})
 
 export default db

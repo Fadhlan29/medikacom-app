@@ -1,59 +1,27 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import db from './src/config/database.js';
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import db from './src/config/database.js'
+import UserRoute from './src/routes/UserRoute.js'
 
-const app = express();
+dotenv.config()
 
-app.use(cors());
-app.use(bodyParser.json());
+const app = express()
 
-app.post('/create', (req, res) => {
-  const {nama_siswa, id_kelas} = req.body;
+// aktifkan kode dibawah ini dengan menghapus komennya untuk membuat database
 
-  const query = 'INSERT INTO siswa (nama_siswa, id_kelas) VALUES (?, ?)';
-  const values = [nama_siswa, id_kelas];
+// try {
+//   await db.sync();
+//   console.log("Database synchronized");
+// } catch (error) {
+//   console.error("Error synchronizing database:", error);
+// }
 
-  db.query(query, values, (err, result) => {
-    if (err) {
-      console.error(err);
-      return res
-        .status(500)
-        .json({status: 'error', message: 'Failed to insert data'});
-    }
-    const createdData = {
-      id_siswa: result.insertId,
-      nama_siswa: nama_siswa,
-      id_kelas: id_kelas,
-    };
-    return res.status(201).json({
-      status: 'success',
-      message: 'Successfully created new data',
-      data: createdData,
-    });
-  });
-});
+app.use(cors())
+app.use(express.json())
 
-app.get('/siswa/:id_kelas', (req, res) => {
-  const id_kelas = req.params.id_kelas;
+app.use(UserRoute)
 
-  const query =
-    'SELECT siswa.nama_siswa, kelas.nama_kelas FROM siswa INNER JOIN kelas ON siswa.id_kelas = kelas.id_kelas WHERE siswa.id_kelas = ?';
-  db.query(query, [id_kelas], (err, result) => {
-    if (err) {
-      console.error(err);
-      return res
-        .status(500)
-        .json({status: 'error', message: 'Failed to fetch data'});
-    }
-    return res.status(200).json({
-      status: 'success',
-      message: 'Data retrieved successfully',
-      data: result,
-    });
-  });
-});
-
-app.listen(5000, () => {
-  console.log(`server running`);
-});
+app.listen(process.env.APP_PORT, () => {
+  console.log(`server up and running in port ` + process.env.APP_PORT)
+})
